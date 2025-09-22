@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #e5ebed;
+    color: #333;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbox {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 49, 53, 0.08);
+    width: 100%;
+    max-width: 380px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 8px;
+    border: 1px solid #d2e1e3;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    background-color: #f9f9f9;
+}
+
+.input-box input:focus {
+    border-color: #024950;
+    outline: none;
+}
+
+.input-box label {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    padding: 0 4px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #666;
+}
+
+.remember-forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 13px;
+}
+
+.remember-forget label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #555;
+}
+
+.remember-forget a {
+    color: #0FA4AF;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.remember-forget a:hover {
+    color: #024950;
+}
+
+.submit {
+    margin-top: 1rem;
+}
+
+.submit button {
+    width: 100%;
+    padding: 12px;
+    background-color: #024950;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.submit button:hover {
+    background-color: #003135;
+}
+
+
+
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #024950, #0FA4AF);
+}
+
+.loginbox {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand h1 {
+    color: #024950;
+    font-size: 24px;
+    margin: 0;
+}
+
+.brand p {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0 0;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #0FA4AF;
+    box-shadow: 0 0 5px rgba(15, 164, 175, 0.2);
+}
+
+.input-box label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: white;
+    padding: 0 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+.input-box input::placeholder {
+    color: #999;
+}
+
+.submit button {
+    width: 100%;
+    padding: 12px;
+    background: #0FA4AF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit button:hover {
+    background: #024950;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-link a {
+    color: #0FA4AF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #024950;
+}
+
+.error-message {
+    color: #dc3545;
+    background-color: #fff2f2;
+    border: 1px solid #ffcdd2;
+    border-radius: 5px;
+    padding: 12px 15px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    animation: fadeIn 0.5s ease;
+}
+
+.error-messages {
+    color: #dc3545;
+    background-color: #fff2f2;
+    border: 1px solid #ffcdd2;
+    border-radius: 5px;
+    padding: 12px 15px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    animation: fadeIn 0.5s ease;
+}
+
+.error-messages ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.error-messages li {
+    margin-bottom: 4px;
+    padding-left: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Password strength indicator */
+.password-strength {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #666;
+}
+
+.requirements {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    padding-left: 12px;
+}
+
+.requirements ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+.requirements li {
+    margin: 3px 0;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #024950, #0FA4AF);
+}
+
+.loginbox {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    color: #024950;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    border-color: #0FA4AF;
+    box-shadow: 0 0 5px rgba(15, 164, 175, 0.2);
+}
+
+.input-box label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: white;
+    padding: 0 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+.remember-forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.remember-forget label {
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remember-forget a {
+    color: #0FA4AF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.remember-forget a:hover {
+    color: #024950;
+}
+
+.submit button {
+    width: 100%;
+    padding: 12px;
+    background: #0FA4AF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit button:hover {
+    background: #024950;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-link a {
+    color: #0FA4AF;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #024950;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-box input::placeholder {
+    color: #999;
+}
+
+/* Logo or brand name styling */
+.brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand h1 {
+    color: #024950;
+    font-size: 24px;
+    margin: 0;
+}
+
+.brand p {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0 0;
+}

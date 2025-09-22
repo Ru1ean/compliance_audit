@@ -1,0 +1,206 @@
+/* Requirements Page Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    background-color: #f8f9fb;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    max-height:100vh;
+    box-sizing: border-box;
+}
+
+.page-header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-header h1 {
+    color: #024950;
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.container {
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    padding: 32px 24px 24px 24px;
+    
+    width: 100%;
+    background-color: #f8f9fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 120px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.add-req-btn {
+    background-color: #0FA4AF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.add-req-btn:hover {
+    background-color: #024950;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 28px 24px 28px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    min-width: 320px;
+    max-width: 95vw;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.modal-content h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.3rem;
+    color: #024950;
+    font-weight: 600;
+}
+.modal-content label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #024950;
+}
+.modal-content input[type="text"],
+.modal-content textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d2e1e3;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    background: #f8f9fb;
+    color: #333;
+    box-sizing: border-box;
+}
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+.submit-btn {
+    background-color: #0FA4AF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.submit-btn:hover {
+    background-color: #024950;
+}
+.cancel-btn {
+    background: #e2e3e5;
+    color: #024950;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cancel-btn:hover {
+    background: #cfd8dc;
+} 
+
+.boxw{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.requirements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.requirement-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(2,73,80,0.07);
+    padding: 18px 22px 14px 22px;
+    border-left: 5px solid #0FA4AF;
+    transition: box-shadow 0.2s;
+    width: 95%;
+}
+
+.requirement-item:hover {
+    box-shadow: 0 4px 16px rgba(2,73,80,0.13);
+}
+
+.req-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.req-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #024950;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.req-number {
+    font-size: 1rem;
+    color: #0FA4AF;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.req-description {
+    font-size: 0.97rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}

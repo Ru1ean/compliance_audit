@@ -1,0 +1,880 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+body {
+    background-color: #f8f9fb; 
+
+    padding-bottom: 80px;   
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.page-header h1 {
+    color: #024950;
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+ 
+    background-color: #f8f9fb;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: left;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.organization {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    min-height: 450px; /* Set a minimum height */
+    background-color: #fff; /* Keeping organization cards white for contrast */
+    border: 1px solid #d2e1e3; /* Updated border color to light teal */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 49, 53, 0.05); /* Updated shadow color */
+}
+
+.organization > label {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #024950; /* Updated to medium teal */
+}
+
+.requirements {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: calc(100vh - 200px); /* Adjust based on your header and buttons height */
+    overflow-y: auto;
+}
+
+.requirement-item {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d2e1e3; /* Updated from #f0f0f0 to light teal */
+}
+
+.req-info {
+    margin-bottom: 10px;
+}
+
+.req-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #003135; /* Updated to dark teal */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.req-description {
+    font-size: 0.75rem;
+    color: #666; /* Updated from #888 to slightly darker */
+    line-height: 1.4;
+}
+
+.compliance-options {
+    display: flex;
+    gap: 15px;
+    align-self: flex-end;
+    margin-top: 8px;
+}
+
+.compliance-options label {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+    margin-right: 20px;
+    padding-right: 15px;
+}
+
+.compliance-options label span {
+    margin-left: 8px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #024950;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+    z-index: 100;
+    background-color: transparent;
+  
+}
+
+.submit-btn {
+    width: 200px;
+    padding: 12px;
+    background-color: #024950;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    position: static;
+    transform: none;
+}
+
+.submit-btn:hover {
+    background-color: #003135;
+}
+
+.add-org-btn {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    background-color: #0FA4AF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    margin: 0;
+}
+
+.add-org-btn:hover {
+    background-color: #024950;
+}
+
+.delete-org-btn {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    background-color: #964734; /* Updated to rust/terracotta */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: not-allowed;
+    transition: all 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    margin: 0;
+    opacity: 0.7;
+}
+
+.delete-org-btn:hover {
+    background-color: #7a3928; /* Updated to darker rust/terracotta */
+}
+
+.delete-org-btn.active {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.ors {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .requirement-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .req-info {
+        width: 70%;
+        margin-bottom: 0;
+    }
+    
+    .compliance-options {
+        margin-top: 0;
+        align-self: center;
+    }
+
+    .organization {
+        width: calc(50% - 20px);
+        max-width: calc(50% - 20px);
+        min-height: 450px; /* Ensure consistent height on desktop */
+        flex: 0 0 calc(50% - 20px); /* Don't grow beyond the allocated space */
+    }
+}
+
+@media (max-width: 767px) {
+    .organization {
+        width: 100%;
+    }
+}
+
+/* Animation for new organizations */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.03) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.organization-new {
+    animation: fadeInScale 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    transform-origin: center top;
+    box-shadow: 0 0 0 rgba(15, 164, 175, 0); /* Updated to bright teal */
+}
+
+/* Glow effect for newly added organizations */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(15, 164, 175, 0); /* Updated to bright teal */
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(15, 164, 175, 0.4); /* Updated to bright teal */
+    }
+    100% {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.organization-new::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    animation: glowPulse 1.5s ease-out forwards;
+    pointer-events: none;
+}
+
+/* Notification styling */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #0FA4AF; /* Updated to bright teal */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(120%);
+    transition: transform 0.3s ease-out;
+    z-index: 1000;
+    font-weight: 500;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+/* Loading animation during organization creation */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(229, 235, 237, 0.8); /* Updated from white to match body bg */
+    display: none; /* Changed from flex to none to hide it by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(2, 73, 80, 0.2); /* Updated to medium teal */
+    border-top: 5px solid #024950; /* Updated to medium teal */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.org-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+.org-name {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.org-delete-btn {
+    background-color: #964734; /* Updated to rust/terracotta */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.org-delete-btn:hover {
+    background-color: #7a3928; /* Updated to darker rust/terracotta */
+}
+
+.org-delete-btn i {
+    font-size: 0.8rem;
+    color: white;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 28px 24px 28px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    min-width: 320px;
+    max-width: 95vw;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.modal-content h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.3rem;
+    color: #024950;
+    font-weight: 600;
+}
+.modal-content label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #024950;
+}
+.modal-content input[type="text"],
+.modal-content textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d2e1e3;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    background: #f8f9fb;
+    color: #333;
+    box-sizing: border-box;
+}
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+.submit-btn {
+    background-color: #0FA4AF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.submit-btn:hover {
+    background-color: #024950;
+}
+.cancel-btn {
+    background: #e2e3e5;
+    color: #024950;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cancel-btn:hover {
+    background: #cfd8dc;
+}
+.success-message {
+    text-align: center;
+    color: #fff;
+    background: #0FA4AF;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 20px auto;
+    width: 50%;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 120px;
+    
+}
+.org-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    height: 320px !important;
+    max-height: 320px !important;
+    min-height: 320px !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.org-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+.req-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.req-label {
+    flex: 1;
+}
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+input[type=\"radio\"] {
+    accent-color: #007bff;
+    width: 16px;
+    height: 16px;
+}
+
+body, html {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.org-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    margin: 20px auto !important;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0 15px !important;
+    max-width: 1600px !important;
+}
+
+.org-card .scroll-table {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.org-card:hover {
+ 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.org-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #024950;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.org-details {
+    margin: 8px 0;
+}
+
+.org-details p {
+    font-size: 14px;
+    margin: 2px 0;
+    color: #555;
+}
+
+.container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 15px 5px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: #024950;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.no-orgs {
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.view-btn {
+    text-decoration: none;
+    color: #024950;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: rgba(2, 73, 80, 0.05);
+}
+
+.view-btn i {
+    margin-right: 5px;
+}
+
+.view-btn:hover {
+    color: #0FA4AF;
+    background-color: rgba(2, 73, 80, 0.1);
+}
+
+.org-actions {
+    margin-top: auto;
+}
+
+/* Filter styles */
+.filter-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1600px;
+}
+
+.filter-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #024950;
+}
+
+.filter-header i {
+    margin-right: 10px;
+}
+
+.filter-row {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    gap: 15px;
+    margin-bottom: 0;
+    align-items: end;
+}
+
+.filter-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #024950;
+    display: block;
+}
+
+.filter-control {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    height: 38px;
+}
+
+.btn i {
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #0FA4AF;
+    color: white;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background-color: #024950;
+}
+
+@media (max-width: 1200px) {
+    .org-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .org-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .filter-row {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .org-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .filter-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .btn-primary {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .org-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .filter-row {
+        grid-template-columns: 1fr;
+    }
+    .btn-primary {
+        grid-column: span 1;
+    }
+}
+#audit-form{
+    margin-top: 70px;
+}
+
+
+
+
+
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+  
+  
+}
+.org-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0;
+    min-height: 180px;
+    max-height: 320px; /* Adjust as needed */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.org-card h3 {
+    margin: 0;
+    padding: 16px 20px 10px 20px;
+    font-size: 1.2em;
+    background: #fafbfc;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.org-card .scroll-table {
+    overflow-y: auto;
+    flex: 1 1 auto;
+    padding: 0 10px 10px 10px;
+    background: #fff;
+}
+.org-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+}
+.org-card th, .org-card td {
+    padding: 8px 10px;
+    text-align: left;
+}
+.org-card th {
+    background: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.org-card td {
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+.org-card tr:last-child td {
+    border-bottom: none;
+}
+.org-card tr:hover {
+    background: #fafbfc;
+}
+.org-card input[type="radio"] {
+    transform: scale(1.2);
+    margin: 0 8px 0 0;
+    vertical-align: middle;
+}
+@media (max-width: 600px) {
+    .org-card table, .org-card thead, .org-card tbody, .org-card th, .org-card td, .org-card tr {
+        display: block;
+    }
+    .org-card th, .org-card td {
+        text-align: left;
+        padding: 8px 5px;
+    }
+    .org-card th {
+        border-bottom: none;
+    }
+}
+.page-header {
+   
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.box123 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  
+    margin: 0 auto;
+    height: auto;
+    padding: 0 20px;
+}
+.page-header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    margin-top: 8px;
+    position: relative;
+    width: 100%;
+}
+.modal-actions .submit-btn {
+    /* Optionally, you can add flex: 0 0 auto; to prevent stretching */
+}
+.modal-actions .cancel-btn {
+    margin-right: 0;
+    width: 30%;
+    margin-left: auto;
+}
